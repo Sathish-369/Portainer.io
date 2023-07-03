@@ -1,0 +1,32 @@
+Portainer setup on a Linux virtual machine
+
+
+Make a docker volume to control a portainer:
+	docker volume create portainer_data
+
+To pull the portainer-container from the repository, kindly run the command below. If needed please change the port to match your infrastructure.
+	docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ee:latest
+
+Please confirm whether portainer Docker Container is present after installing Portianer.
+	docker ps
+Restart the portainer container if it is available. 
+	docker restart portainer
+
+Please obtain the certificate key from the Portainer website and enter your contact information, including your email address.
+	https://www.portainer.io/take-5
+
+Now begin configuring the portable web console
+	To log in to the web console, use localhost or the IP address and port (111.111.11.1:9443).
+	Also offer an admin password of 12 characters.
+
+Now enter the certificate key you received from Portianer into the certificate area which is in your email.
+	xxxxxxxxxcccccccccccccssssssssssssssssssffffffffff
+
+you may now access the GUI to view the list of docker and containers.
+
+Here, you can perform all of the actions you can carry out using a graphical user interface rather than a terminal.
+
+
+
+
+
